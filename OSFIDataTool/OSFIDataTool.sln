@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSFIDataTool", "OSFIDataTool\OSFIDataTool.csproj", "{840D25AB-3DE7-4C3D-9763-831DAD604C8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OSFIDataToolTest", "OSFIDataToolTest\OSFIDataToolTest.csproj", "{887E1B65-45F4-4B22-83DF-0D1871F73B1B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{840D25AB-3DE7-4C3D-9763-831DAD604C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{840D25AB-3DE7-4C3D-9763-831DAD604C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{840D25AB-3DE7-4C3D-9763-831DAD604C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887E1B65-45F4-4B22-83DF-0D1871F73B1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887E1B65-45F4-4B22-83DF-0D1871F73B1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887E1B65-45F4-4B22-83DF-0D1871F73B1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887E1B65-45F4-4B22-83DF-0D1871F73B1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

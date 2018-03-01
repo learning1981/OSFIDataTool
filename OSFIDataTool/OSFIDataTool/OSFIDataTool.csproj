@@ -55,8 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
-    <Compile Include="IModel.cs" />
-    <Compile Include="Model.cs" />
+    <Compile Include="IRepository.cs" />
+    <Compile Include="Repository.cs" />
     <Compile Include="OSFIDataTool.cs">
       <SubType>Form</SubType>
     </Compile>
