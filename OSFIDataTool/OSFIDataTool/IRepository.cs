@@ -5,8 +5,8 @@ namespace OSFIDataTool
 {
     public interface IRepository
     {
-        IEnumerable<Data> ReadTextFile(string fullPath);
+        IEnumerable<Data> ReadTextFile(string inputFile);
 
-        void WriteExcelFile(string outputPath, string reportCode, IEnumerable<Data> collection);
+        void WriteExcelFile(string outputPath, string companyCode, string reportCode, IEnumerable<Data> collection);
     }
 }

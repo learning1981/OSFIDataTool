@@ -8,19 +8,20 @@ namespace OSFIDataTool
 {
     public class Repository : IRepository
     {
-        public IEnumerable<Data> ReadTextFile(string fullPath)
+        public IEnumerable<Data> ReadTextFile(string inputFile)
         {
             var listData = new List<Data>();
 
-            if (!File.Exists(fullPath))
+            if (!File.Exists(inputFile))
             {
-                MessageBox.Show(fullPath + " does not exist.");
+                DisplayGeneralMessage(inputFile + " does not exist.");
             }
             else
             {
                 try
                 {
-                    foreach (string line in File.ReadLines(fullPath))
+                    // Read file line by line to extract data to the list of Data object
+                    foreach (string line in File.ReadLines(inputFile))
                     {
                         var data = new Data
                         {
@@ -38,18 +39,18 @@ namespace OSFIDataTool
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error occured while reading text file" + Environment.NewLine + ex.Message);
+                    DisplayErrorMessage("An error occured while reading text file" + Environment.NewLine + ex.Message);
                 }
             }
 
             return listData;
         }
 
-        public void WriteExcelFile(string outputPath, string reportCode, IEnumerable<Data> collection)
+        public void WriteExcelFile(string outputPath, string companyCode, string reportCode, IEnumerable<Data> collection)
         {
             if (!File.Exists(outputPath))
             {
-                MessageBox.Show(outputPath + " does not exist.");
+                DisplayGeneralMessage(outputPath + " does not exist.");
             }
             else
             {
@@ -59,7 +60,7 @@ namespace OSFIDataTool
 
                     using (var p = new ExcelPackage(fileInfo))
                     {
-                        var ws = p.Workbook.Worksheets[reportCode];
+                        var ws = p.Workbook.Worksheets[string.Concat(companyCode,reportCode)];
 
                         foreach (var data in collection)
                         {
@@ -72,9 +73,19 @@ namespace OSFIDataTool
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("An error occured while reading text file" + Environment.NewLine + ex.Message);
+                    DisplayErrorMessage("An error occured while reading text file" + Environment.NewLine + ex.Message);
                 }
             }
+        }
+
+        private void DisplayErrorMessage(string message)
+        {
+            MessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void DisplayGeneralMessage(string message)
+        {
+            MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private Dictionary<string, string> CellLookupDictionary
