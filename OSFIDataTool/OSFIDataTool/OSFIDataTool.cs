@@ -55,9 +55,49 @@ namespace OSFIDataTool
             Close();
         }
 
+        private void ButtonInputFile1_Click(object sender, System.EventArgs e)
+        {
+            TextBoxInputFile1.Text = string.Empty;
+            openFileDialog.DefaultExt = "txt";
+            openFileDialog.Filter = "Text File | *.txt";
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxInputFile1.Text = openFileDialog.FileName;
+            }
+        }
+
+        private void ButtonInputFile2_Click(object sender, System.EventArgs e)
+        {
+            TextBoxInputFile2.Text = string.Empty;
+            openFileDialog.DefaultExt = "txt";
+            openFileDialog.Filter = "Text File | *.txt";
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxInputFile2.Text = openFileDialog.FileName;
+            }
+        }
+
+        private void ButtonOutputFile_Click(object sender, System.EventArgs e)
+        {
+            TextBoxOutputFile.Text = string.Empty;
+            openFileDialog.DefaultExt = "xlsx";
+            openFileDialog.Filter = "Excel File | *.xlsx";
+            openFileDialog.Multiselect = false;
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                TextBoxOutputFile.Text = openFileDialog.FileName;
+            }
+        }
+
+        #region Functions
+
         private void DisplayMessage(string message)
         {
             MessageBox.Show(message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        #endregion
     }
 }

@@ -29,6 +29,8 @@ namespace OSFIDataTool
                 _allInputData.Clear();
                 _allInputData.AddRange(_repository.ReadTextFile(InputFile1));
                 _allInputData.AddRange(_repository.ReadTextFile(InputFile2));
+
+                DisplayGeneralMessage("Text files are loaded successfully.");
             }
             catch (Exception ex)
             {
@@ -47,6 +49,7 @@ namespace OSFIDataTool
                 else
                 {
                     var filteredList = _allInputData.Where(d => string.Compare(d.CompanyCode, CompanyCode, true) == 0 && string.Compare(d.ReportCode, ReportCode, true) == 0);
+
                     _repository.WriteExcelFile(OutputFile, CompanyCode, ReportCode, filteredList);
                 }
             }

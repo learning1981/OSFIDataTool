@@ -60,6 +60,7 @@
             this.ButtonInputFile1.TabIndex = 1;
             this.ButtonInputFile1.Text = "Input File 1";
             this.ButtonInputFile1.UseVisualStyleBackColor = true;
+            this.ButtonInputFile1.Click += new System.EventHandler(this.ButtonInputFile1_Click);
             // 
             // TextBoxOutputFile
             // 
@@ -77,6 +78,7 @@
             this.ButtonOutputFile.TabIndex = 1;
             this.ButtonOutputFile.Text = "Output File";
             this.ButtonOutputFile.UseVisualStyleBackColor = true;
+            this.ButtonOutputFile.Click += new System.EventHandler(this.ButtonOutputFile_Click);
             // 
             // label1
             // 
@@ -116,7 +118,7 @@
             this.ButtonPopulateData.Name = "ButtonPopulateData";
             this.ButtonPopulateData.Size = new System.Drawing.Size(99, 23);
             this.ButtonPopulateData.TabIndex = 4;
-            this.ButtonPopulateData.Text = "Populate Data";
+            this.ButtonPopulateData.Text = "2.Populate Data";
             this.ButtonPopulateData.UseVisualStyleBackColor = true;
             this.ButtonPopulateData.Click += new System.EventHandler(this.ButtonPopulateData_Click);
             // 
@@ -140,6 +142,7 @@
             this.ButtonInputFile2.TabIndex = 1;
             this.ButtonInputFile2.Text = "Input File 2";
             this.ButtonInputFile2.UseVisualStyleBackColor = true;
+            this.ButtonInputFile2.Click += new System.EventHandler(this.ButtonInputFile2_Click);
             // 
             // ButtonLoadFile
             // 
@@ -147,7 +150,7 @@
             this.ButtonLoadFile.Name = "ButtonLoadFile";
             this.ButtonLoadFile.Size = new System.Drawing.Size(111, 23);
             this.ButtonLoadFile.TabIndex = 4;
-            this.ButtonLoadFile.Text = "Load Files If New";
+            this.ButtonLoadFile.Text = "1.Load Files If New";
             this.ButtonLoadFile.UseVisualStyleBackColor = true;
             this.ButtonLoadFile.Click += new System.EventHandler(this.ButtonLoadFile_Click);
             // 

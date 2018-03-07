@@ -60,15 +60,32 @@ namespace OSFIDataTool
 
                     using (var p = new ExcelPackage(fileInfo))
                     {
-                        var ws = p.Workbook.Worksheets[string.Concat(companyCode,reportCode)];
+                        var sheetName = string.Concat(companyCode, reportCode);
+                        var found = false;
 
-                        foreach (var data in collection)
+                        foreach (var worksheet in p.Workbook.Worksheets)
                         {
-                            var key = data.CellLookup;
-                            ws.Cells[CellLookupDictionary[key]].Value = data.Value;
+                            if (string.Compare(worksheet.Name, sheetName, true) == 0)
+                            {
+                                found = true;
+                                foreach (var data in collection)
+                                {
+                                    var key = data.CellLookup;
+                                    worksheet.Cells[CellLookupDictionary[key]].Value = data.Value;
+                                }
+                            }
                         }
 
                         p.Save();
+
+                        if (!found)
+                        {
+                            DisplayGeneralMessage("Please create sheet: " + sheetName);
+                        }
+                        else
+                        {
+                            DisplayGeneralMessage("Data is populated to the excel file.");
+                        }
                     }
                 }
                 catch (Exception ex)
